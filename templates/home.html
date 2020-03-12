@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ER Diagram Generation Engine</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body background="static/Website-Background.png">
+<br><h1 align="center">ER Diagram Generator</h1><br>
+<div class="container">
+    <div class="form-group">
+        <form action="{{ url_for('submit') }}" method="post">
+            <label><h3 align="left">Enter Scenario:</h3></label><br>
+            <textarea rows="5" cols="150" name="scenario" id="scenario" align="center" style="background-color: transparent">{{ scenario }}</textarea><br>
+            <button type="submit" class="btn btn-secondary" name="submit_btn" value="generate_entity_attribute">Extract Entities</button><br><br>
+            <label><h5 align="left">Entities:</h5></label><br>
+            <label><h6>{{ entitylist }}</h6></label><br>
+            <textarea rows="1" cols="150" name="entitylist" id="entitylist" placeholder="Enter edited entity list" align="center" style="background-color: transparent">{{ entitylist }}</textarea><br>
+            <button type="submit" class="btn btn-secondary" name="submit_btn" value="generate_attribute">Extract Attributes</button><br><br>
+            <label><h5 align="left">Attributes:</h5></label><br>
+            <label><h6>
+                <table style="border: 1px gray;border-collapse: collapse;">
+                    <tbody>
+                    {% for ob in my_objects %}
+                    <tr>
+                        <td>{{ ob.entityname }}</td>
+                        <td> : {{ ob.attributelist }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </h6></label><br>
+            <textarea rows="5" cols="150" name="attributelist" id="attributelist" placeholder="Enter edited entity and attribute list" align="center" style="background-color: transparent">{{ entitylist1 }}</textarea><br>
+            <button type="submit" class="btn btn-secondary" name="submit_btn" value="generate_final_list">Submit</button><br><br>
+            <label><h3 align="left">Entities and Attributes:</h3></label><br>
+            <label><h6>
+                <table style="border: 1px gray;border-collapse: collapse;">
+                    <tbody>
+                    {% for ob in my_objects %}
+                    <tr>
+                        <td>{{ ob.entityname }}</td>
+                        <td> : {{ ob.attributelist }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </h6></label><br>
+        </form>
+    </div>
+</div>
+</body>
+</html>

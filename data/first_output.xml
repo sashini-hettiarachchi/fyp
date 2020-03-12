@@ -1,0 +1,58 @@
+<er name="ER_name">
+	<entity name="musician">
+		<attribute name="number" value="primary_key" />
+		<attribute name="ssn" />
+		<attribute name="name" />
+		<attribute name="address" />
+		<attribute name="phone" />
+	</entity>
+	<entity name="notown">
+		<attribute name="ssn" />
+		<attribute name="name" />
+		<attribute name="address" />
+		<attribute name="number" value="primary_key" />
+		<attribute name="guitar" />
+		<attribute name="synthesizer" />
+		<attribute name="c" />
+		<attribute name="identifier" />
+		<attribute name="title" />
+		<attribute name="date" />
+		<attribute name="author" />
+	</entity>
+	<entity name="instrument">
+		<attribute name="number" value="primary_key" />
+		<attribute name="guitar" />
+		<attribute name="synthesizer" />
+		<attribute name="c" />
+	</entity>
+	<entity name="label">
+		<attribute name="number" value="primary_key" />
+		<attribute name="title" />
+		<attribute name="date" />
+		<attribute name="identifier" />
+	</entity>
+	<entity name="song">
+		<attribute name="number" value="primary_key" />
+		<attribute name="guitar" />
+		<attribute name="synthesizer" />
+		<attribute name="c" />
+		<attribute name="author" />
+	</entity>
+<relation degree="binary" name="recorded" type="many_to_many">
+		<member1 cardinality="many" name="notown" primary_key="number" />
+		<member2 cardinality="many" name="song" primary_key="number" />
+	</relation>
+	<relation degree="binary" name="play" type="many_to_many">
+		<member1 cardinality="many" name="instrument" primary_key="number" />
+		<member2 cardinality="many" name="musician" primary_key="number" />
+	</relation>
+	<relation degree="binary" name="is_performed" type="many_to_many">
+		<member1 cardinality="many" name="musician" primary_key="number" />
+		<member2 cardinality="many" name="song" primary_key="number" />
+	</relation>
+	<relation degree="ternary" name="used" type="one_to_many">
+		<member1 cardinality="one" name="notown" primary_key="number" />
+		<member3 cardinality="many" name="song" primary_key="many" />
+		<member2 cardinality="many" name="instrument" primary_key="number" />
+	</relation>
+</er>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<er>
+	<relation name="recorded" degree="binary" type="many_to_many">
+		<member1 name="notown" cardinality="many" primary_key="number"></member1>
+		<member2 name="song" cardinality="many" primary_key="number"></member2>
+	</relation>
+	<relation name="play" degree="binary" type="many_to_many">
+		<member1 name="instrument" cardinality="many" primary_key="number"></member1>
+		<member2 name="musician" cardinality="many" primary_key="number"></member2>
+	</relation>
+	<relation name="is_performed" degree="binary" type="many_to_many">
+		<member1 name="musician" cardinality="many" primary_key="number"></member1>
+		<member2 name="song" cardinality="many" primary_key="number"></member2>
+	</relation>
+	<relation name="used" degree="ternary" type="one_to_many">
+		<member1 name="notown" cardinality="one" primary_key="number"></member1>
+		<member3 name="song" cardinality="many" primary_key="many"></member3>
+		<member2 name="instrument" cardinality="many" primary_key="number"></member2>
+	</relation>
+</er>

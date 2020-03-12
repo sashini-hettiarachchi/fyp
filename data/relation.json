@@ -1,0 +1,71 @@
+{
+    "er": {
+        "relation": [
+            {
+                "@degree": "binary",
+                "@name": "recorded",
+                "@type": "many_to_many",
+                "member1": {
+                    "@cardinality": "many",
+                    "@name": "notown",
+                    "@primary_key": "number"
+                },
+                "member2": {
+                    "@cardinality": "many",
+                    "@name": "song",
+                    "@primary_key": "number"
+                }
+            },
+            {
+                "@degree": "binary",
+                "@name": "play",
+                "@type": "many_to_many",
+                "member1": {
+                    "@cardinality": "many",
+                    "@name": "instrument",
+                    "@primary_key": "number"
+                },
+                "member2": {
+                    "@cardinality": "many",
+                    "@name": "musician",
+                    "@primary_key": "number"
+                }
+            },
+            {
+                "@degree": "binary",
+                "@name": "is_performed",
+                "@type": "many_to_many",
+                "member1": {
+                    "@cardinality": "many",
+                    "@name": "musician",
+                    "@primary_key": "number"
+                },
+                "member2": {
+                    "@cardinality": "many",
+                    "@name": "song",
+                    "@primary_key": "number"
+                }
+            },
+            {
+                "@degree": "ternary",
+                "@name": "used",
+                "@type": "one_to_many",
+                "member1": {
+                    "@cardinality": "one",
+                    "@name": "notown",
+                    "@primary_key": "number"
+                },
+                "member2": {
+                    "@cardinality": "many",
+                    "@name": "instrument",
+                    "@primary_key": "number"
+                },
+                "member3": {
+                    "@cardinality": "many",
+                    "@name": "song",
+                    "@primary_key": "many"
+                }
+            }
+        ]
+    }
+}
