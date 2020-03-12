@@ -1,0 +1,39 @@
+# label: %node%
+# style: shape=%shape%;fillColor=%fill%;strokeColor=%stroke%;
+# namespace: csvimport-
+# connect: {"from":"many", "to":"node","invert": true, "style":"edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;"}
+# connect: {"from":"one", "to":"node", "invert": true,"style":"edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERone;endFill=1;"}
+# connect: {"from":"attri","invert": true, "to":"node", "style":"endArrow=none;html=1;rounded=0;"}
+# connect: {"from":"compo","invert": true, "to":"node", "style":"endArrow=none;html=1;rounded=0;"}
+# width: auto
+# height: auto
+# padding: 15
+# ignore: id,shape,fill,stroke,refs
+# nodespacing: 40
+# levelspacing: 100
+# edgespacing: 40
+# layout: auto
+## CSV starts under this line
+node,fill,stroke,shape,one,many,attri,compo
+has,#dae8fc,#6c8ebf,rhombus,,,,
+has,#dae8fc,#6c8ebf,rhombus,,,,
+has,#dae8fc,#6c8ebf,rhombus,,,,
+participating,#dae8fc,#6c8ebf,rhombus,,,,
+participating,#dae8fc,#6c8ebf,rhombus,,,,
+participate,#dae8fc,#6c8ebf,rhombus,,,,
+has,#dae8fc,#6c8ebf,rhombus,,,,
+has,#dae8fc,#6c8ebf,rhombus,,,,
+has,#dae8fc,#6c8ebf,rhombus,,,,
+participating,#dae8fc,#6c8ebf,rhombus,,,,
+participating,#dae8fc,#6c8ebf,rhombus,,,,
+participate,#dae8fc,#6c8ebf,rhombus,,,,
+team,#dae8fc,#6c8ebf,rectangle,"has,has,has,has,has,has",,,
+driver,#dae8fc,#6c8ebf,rectangle,"participating,participating,participate,participating,participating,participate","has,has,has,participating,participating,participate,has,has,has,participating,participating,participate",,
+race,#dae8fc,#6c8ebf,rectangle,,,,
+team_names,#dae8fc,#6c8ebf,ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;,,,team,
+team_number,#dae8fc,#6c8ebf,ellipse,,,team,
+team_up,#dae8fc,#6c8ebf,ellipse,,,team,
+driver_number,#dae8fc,#6c8ebf,ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;,,,driver,
+driver_first,#dae8fc,#6c8ebf,ellipse,,,driver,
+driver_last,#dae8fc,#6c8ebf,ellipse,,,driver,
+race_dates,#dae8fc,#6c8ebf,ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;,,,race,
