@@ -3,7 +3,7 @@ import nltk
 import inflect
 from pattern.en import pluralize, singularize
 
-from src.attributes import clear_attribute_list
+from src.attributes_extractor import clear_attribute_list
 
 p = inflect.engine()
 dict_entities={}

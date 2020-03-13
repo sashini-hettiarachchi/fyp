@@ -5,7 +5,7 @@
     Author     : jhong
     Description:
         File containing types used in multiple XML formats.  Only simple types
-        or complex types containing only attributes are stored in this file.
+        or complex types containing only attributes_extractor are stored in this file.
         Complex types containing elements should have files of their own.
 -->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -116,7 +116,7 @@
 
   <!-- **************** ATTRIBUTE-ONLY COMPLEX TYPES **************** -->
     
-  <!-- an attributes-only lexeme element -->
+  <!-- an attributes_extractor-only lexeme element -->
     <xsd:complexType name="lexemeType">
         <xsd:attribute name="name" type="xsd:string" use="required"/>
         <xsd:attribute name="POS" type="fn:POSType" use="required"/>
@@ -125,7 +125,7 @@
         <xsd:attribute name="order" type="fn:orderType"/>
     </xsd:complexType>
     
- <!-- an attributes-only semType element -->
+ <!-- an attributes_extractor-only semType element -->
     <xsd:complexType name="semTypeRefType">
         <xsd:attribute name="ID" type="fn:IDType" use="required"/>
         <xsd:attribute name="name" type="xsd:string" use="required"/>
@@ -139,7 +139,7 @@
         <xsd:attribute name="frame" type="fn:frameNameType"/>
     </xsd:attributeGroup>
     
- <!-- an attribute group for basic lexunit attributes -->
+ <!-- an attribute group for basic lexunit attributes_extractor -->
     <xsd:attributeGroup name="basicLUAttributes">
         <xsd:attribute name="ID" type="fn:IDType" use="required"/>
         <xsd:attribute name="name" type="fn:LUNameType" use="required"/>

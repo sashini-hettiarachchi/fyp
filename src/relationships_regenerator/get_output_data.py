@@ -38,7 +38,7 @@ def get_relationship_list():
                             'name': rel.get('name'),
                             'type': rel.get('type'),
                             'degree': rel.get('degree'),
-                            'entities': [
+                            'entities_extractor': [
                                 {
                                     'id': 1,
                                     'name': member1_name,

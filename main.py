@@ -1,4 +1,8 @@
-from src import draw_er, identify_relationship, create_er_xml_file, map_er_to_relational_schema
+from time import sleep
+
+from src.er_drawer import create_er_xml_file, draw_er
+from src.relational_schema_creator import map_er_to_relational_schema
+from src.relationships_extractor import identify_relationship
 from src.features import main_cordinator
 
 
@@ -31,6 +35,7 @@ def generateOutput(finallist):
 
 def create_er_diagram_xml_file():
     try:
+        sleep(10)
         identify_relationship.entity_combined_with_scenario()
         # find_cardinality.find_cardinality()
         create_er_xml_file.create_output_xml_file()

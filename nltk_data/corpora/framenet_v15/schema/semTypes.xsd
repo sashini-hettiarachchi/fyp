@@ -13,7 +13,7 @@
 "DAY_NAME MONTH_NAME HRS:MINS:SECS TIMEZONE YEAR"
 QUESTION: should this be required?
 3. Direct children of root "semTypes" is "semType" (have 0 or more)
-4. "semType" has 3 required attributes (Q: sequential attributes?)
+4. "semType" has 3 required attributes_extractor (Q: sequential attributes_extractor?)
     4a. "ID", which is a non-negative integer
     4b. "name", which is a string
     4c. "abbrev", which is a string (could be identical to name)
@@ -72,7 +72,7 @@ for validation -->
                 </xsd:complexType>
             </xsd:element> <!-- "superType" -->
         </xsd:sequence>
-                   <!-- 4. "semType" has 3 required attributes (Q: sequential attributes?)
+                   <!-- 4. "semType" has 3 required attributes_extractor (Q: sequential attributes_extractor?)
                             4a. "ID", which is a non-negative integer
                             4b. "name", which is a string
                             4c. "abbrev", which is a string (could be identical to name) -->

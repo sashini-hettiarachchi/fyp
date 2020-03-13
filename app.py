@@ -2,7 +2,8 @@ from time import sleep
 # from flask import Flask, request, jsonify, json
 from flask import render_template, Flask, jsonify, json, request
 import main
-from src import get_output_data, create_er_xml_file
+from src.relationships_regenerator import get_output_data
+from src.er_drawer import create_er_xml_file
 from src.utils import file_manipulation, git_push_automation
 
 app = Flask(__name__)
@@ -59,6 +60,7 @@ def submit():
 
 @app.route('/api/v1/relationships', methods=['GET'])
 def return_er_data():
+    sleep(10)
     main.create_er_diagram_xml_file()
     sleep(10)
     relationship_data = get_output_data.get_relationship_list()

@@ -1,6 +1,6 @@
 import re
-from src.entities import entity
-from src.attributes import attribute
+from src.entities_extractor import entity
+from src.attributes_extractor import attribute
 from src.xml import xml_new
 
 def convert_xml(finaloutput_dic):

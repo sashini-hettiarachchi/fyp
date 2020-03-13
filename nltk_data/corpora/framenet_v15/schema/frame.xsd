@@ -6,7 +6,7 @@
             elementFormDefault="qualified">
 <!-- 
     1. Root element is 'frame'
-    2. 'frame' has 3 attributes:
+    2. 'frame' has 3 attributes_extractor:
         1. 'ID', a nonNegativeInteger
         2. 'name' a word (that could contain underscores/dashes etc.) starting with a capital letter
         3. 'cDate' dayabbr monthabbr daynum hour:min:sec timezone year
@@ -14,7 +14,7 @@
         1. 'definition' a string
         2. 'fe'a complex type described below (1+)
         3. 'lexUnit' a complex type described below (0+)
-    3.2.1 'fe' has 7 attributes:
+    3.2.1 'fe' has 7 attributes_extractor:
         1. 'ID' (same as above description)
         2. 'name' (same as above description)
         3. 'abbrev' (same type as 'name')
@@ -24,8 +24,8 @@
         7. 'bgColor' (same type as 'fgColor')
     3.2.2 'fe' has 2 elements:
         1. 'definition' (a string)
-        2. 'semType' (just as two attributes 'ID' and 'name') (implied 0+)
-    3.3.1 'lexUnit' has 6 attributes:
+        2. 'semType' (just as two attributes_extractor 'ID' and 'name') (implied 0+)
+    3.3.1 'lexUnit' has 6 attributes_extractor:
         1. 'ID' (same as above description)
         2. 'name' (word with a period followed by a letter)
         3. 'POS' (a capital letter)
@@ -37,7 +37,7 @@
         2. 'annotation' (has 2 elements, 'annotated' and 'total' both nonNegativeIntegers)
         3. 'lexeme' (a complex type described below) (1+)
         4. 'semType' (same as above) (implied 0+)
-    3.3.2.3.1 'lexeme' has 4 attributes
+    3.3.2.3.1 'lexeme' has 4 attributes_extractor
         1. 'ID' (same)
         2. 'POS' (a capital letter)
         3. 'breakBefore' (a boolean)

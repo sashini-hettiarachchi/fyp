@@ -4,7 +4,7 @@ import inflect
 import nltk
 
 from src.pre_process.common_nlp import lemmatizer, text_into_sentence
-from src.identify_relationship import binary_relationship_dic_list, ternary_relationship_list, \
+from src.relationships_extractor.identify_relationship import binary_relationship_dic_list, ternary_relationship_list, \
     unary_relationship_dic_list
 from src.utils.file_manipulation import get_root_of_input_xml
 

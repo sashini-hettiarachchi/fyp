@@ -1,4 +1,4 @@
-from src.entities import entity_from_huristics, entity_from_tfidf
+from src.entities_extractor import entity_from_huristics, entity_from_tfidf
 
 new_entity_list = []
 

@@ -1,5 +1,6 @@
 import random
 import re
+from time import sleep
 
 import nltk
 
@@ -19,7 +20,7 @@ new_word_list = []
 regex_for_verb_tags = r"VB[GDPNZP]?"
 
 
-# find the sentences which has entities
+# find the sentences which has entities_extractor
 def find_entities(word):
     root = get_root_of_input_xml()
     for entity_ref in root.findall('entity'):
@@ -31,9 +32,10 @@ def find_entities(word):
             return word
 
 
-# entities and related sentence return
+# entities_extractor and related sentence return
 def entity_combined_with_scenario():
     sentences = text_into_sentence()
+    sleep(10)
     for sentence in sentences:
         entity_list = []
         word_list = nltk.word_tokenize(sentence)
@@ -46,6 +48,7 @@ def entity_combined_with_scenario():
 
         # Remove duplicates in entity list
         if len(entity_list) >= 2:
+            sleep(10)
             duplicate_removed_entity_list = list(set(entity_list))
             if len(duplicate_removed_entity_list) >= 2:
                 for entity in duplicate_removed_entity_list:
@@ -75,7 +78,7 @@ def find_relationship(entity_list, sentence):
     # Identify Unary relationships
     if len(entity_list) == 1:
             member = lemmatizer.lemmatize(entity_list[0])
-            # Eliminate entity names as attributes
+            # Eliminate entity names as attributes_extractor
             regex_for_unary_1 = r"(.*)(" + re.escape(member) + ")(.*,.*,.*)(" + re.escape(member) + ")(.*)"
             regex_for_unary_2 = r"(.*)(" + re.escape(member) + ")(.*)(" + re.escape(member) + ")(.*)(,)(.*)(,)(.*)"
             regex_for_unary_3 = r"(.*)(" + re.escape(member) + ")(.*)(identified)(.*)(" + re.escape(member) + ")(.*)"

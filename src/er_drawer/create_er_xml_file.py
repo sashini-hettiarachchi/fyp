@@ -5,7 +5,7 @@ from xml.etree import ElementTree
 
 import xmltodict
 
-from src import find_cardinality
+from src.cadinality_detector import find_cardinality
 from src.utils.file_manipulation import PATH
 
 table = []
@@ -62,7 +62,7 @@ def recreate_relation_xml(er):
         relationship = dic.get("name")
         cardinality = dic.get("type")
         degree = dic.get("degree")
-        entities = dic.get("entities")
+        entities = dic.get("entities_extractor")
         for entity in entities:
             if entity.get('id') == 1:
                 member1_name = entity.get("name")
