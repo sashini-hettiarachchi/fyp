@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SQL Query Generation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="jsFile.js"></script>
+
+    <style>
+        textarea,input[type=text]{
+      /* box-sizing: padding-box; */
+      overflow:hidden;
+      /* demo only: */
+      padding:10px;
+      width:950px;
+      font-size:14px;
+      margin:10px auto;
+      display:block;
+      border-radius:2px;
+      border:2px solid #556677;
+    }
+
+    </style>
+
+
+</head>
+<body background="static/Website-Background.png">
+
+<div class="container">
+    <h2>SQL Query Generator</h2>
+    <form class="form-horizontal" method="post" action="/submit">
+        <div class="form-group">
+            <label class="control-label col-sm-2">Enter natural language query :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="naturalQuery" placeholder="Natural Langauge Query" name="naturalQuery">
+                {% if text %}
+                    <label>{{ text }}</label>
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit"  name="submit_btn" value="generate_sql">Generate SQL Query</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+
+                <label>
+                    <textarea rows="30" cols="140" name="comment" form="usrform">
+                        SQL Query :
+                            {{ sql_query_1 }}
+
+                        Database Result :
+                        {% for result in query_result %}
+                             {{ result }}
+                        {% endfor %}
+
+                        Tables :
+                        {% for table in tables %}
+                            {{ table }}
+                        {% endfor %}
+
+                        Attributes :
+                        {% for attribute in attributes %}
+                             {{ attribute }}
+                        {% endfor %}
+
+                        Conditions :
+                             {{ conditions }}
+
+                        Table Joins :
+                             {{ joins }}
+                    </textarea>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">If the identified table names are incorrect, please type them here :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="tableNames" placeholder="Table Names" name="tableNames">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">If the identified attribute names are incorrect, please type them here :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="attributeNames" placeholder="Attributes" name="attributeNames">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">If the identified table joins are incorrect, please type them here :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="tableJoins" placeholder="Table Joins" name="tableJoins">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">If the identified conditions are incorrect, please type them here :</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="conditions" placeholder="Conditions" name="conditions" >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" name="submit_btn" value="re_generate_sql">Re-generate SQL Query</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <label>
+                    <textarea rows="30" cols="140" name="comment" form="usrform">
+                        Re-generated SQL Query:
+                            {{ new_query }}
+
+                        Database Result:
+                        {% for result in new_result %}
+                             {{ result }}
+
+                        {% endfor %}
+
+                    </textarea>
+                </label>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
