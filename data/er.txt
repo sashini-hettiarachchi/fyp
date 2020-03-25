@@ -15,14 +15,14 @@
 # layout: auto
 ## CSV starts under this line
 node,fill,stroke,shape,one,many,attri,compo
-keep,#dae8fc,#6c8ebf,rhombus,,,,
+manage,#dae8fc,#6c8ebf,rhombus,,,,
 controls,#dae8fc,#6c8ebf,rhombus,,,,
 is_working,#dae8fc,#6c8ebf,rhombus,,,,
 related_with,#dae8fc,#6c8ebf,rhombus,,,,
 assign,#dae8fc,#6c8ebf,rhombus,,,,
 supervised,#dae8fc,#6c8ebf,rhombus,,,,
-department,#dae8fc,#6c8ebf,rectangle,keep,"controls,assign",,
-employee,#dae8fc,#6c8ebf,rectangle,"keep,related_with,assign,supervised,supervised",is_working,,
+department,#dae8fc,#6c8ebf,rectangle,"manage,assign",controls,,
+employee,#dae8fc,#6c8ebf,rectangle,"manage,related_with,supervised,supervised","is_working,assign",,
 project,#dae8fc,#6c8ebf,rectangle,,"controls,is_working",,
 dependent,#dae8fc,#6c8ebf,rectangle,,related_with,,
 department_name,#dae8fc,#6c8ebf,ellipse,,,department,
